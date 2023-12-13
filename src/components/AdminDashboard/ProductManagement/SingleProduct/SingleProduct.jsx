@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -25,6 +24,15 @@ const SingleProduct = () => {
 
     const handleEditClick = () => {
         navigate(`/editproduct/${productId}`);
+    };
+
+    const handleDeleteClick = async () => {
+        try {
+            await axios.delete(`http://localhost:4000/api/admin/deleteproduct/${productId}`);
+            navigate('/');
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
@@ -58,6 +66,7 @@ const SingleProduct = () => {
                         ))}
                     </ul>
                     <button onClick={handleEditClick}>Edit</button>
+                    <button onClick={handleDeleteClick}>Delete</button>
                 </div>
             )}
         </div>

@@ -21,13 +21,13 @@ const EditProduct = () => {
         fetchProductData();
     }, [productId]);
 
-    const handleEditSubmit = () => {
+    const handleEditSubmit = (e) => {
+        e.preventDefault();
         console.log('Submitting edit:', product);
         axios
             .patch(`http://localhost:4000/api/admin/editproduct/${productId}`, product)
             .then((response) => {
                 console.log('Edit successful:', response.data);
-                navigate('/');
                 navigate('/');
             })
             .catch((error) => {
