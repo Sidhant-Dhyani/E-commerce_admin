@@ -1,0 +1,6 @@
+
+.dashboard__container_navbar {
+    display: flex;
+    justify-content: space-evenly;
+}
+
