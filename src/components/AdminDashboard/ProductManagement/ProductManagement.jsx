@@ -12,14 +12,17 @@ const ProductManagement = () => {
     };
     return (
         <div className='product_management'>
-            <div>
-                <h5 onClick={() => handleHeaderClick('AddProduct')} >Add New Product</h5>
-                {selectedComponent === 'AddProduct' && <AddProduct />}
+            <div className='product_management_container'>
+                <div>
+                    <h5 onClick={() => handleHeaderClick('AddProduct')} >Add New Product</h5>
+                </div>
+                <div>
+                    <h5 onClick={() => handleHeaderClick('ViewProduct')} >View</h5>
+                </div>
             </div>
-            <div>
-                <h5 onClick={() => handleHeaderClick('ViewProduct')} >View</h5>
-                {selectedComponent === 'ViewProduct' && <ViewProduct />}
-            </div>
+
+            {selectedComponent === 'AddProduct' && <AddProduct />}
+            {selectedComponent === 'ViewProduct' && <ViewProduct />}
         </div>
     );
 };

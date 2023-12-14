@@ -1,8 +1,10 @@
-.product_management {
+
+.sales {
     border: solid 2px red;
+    width : 100vw;
 }
 
-.product_management_container {
+.sales_container {
     display: flex;
     justify-content: space-evenly;
 }
