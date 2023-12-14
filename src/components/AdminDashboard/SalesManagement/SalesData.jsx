@@ -1,6 +1,8 @@
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './SalesData.css';
+
 const SalesData = ({ str }) => {
     const [salesData, setSalesData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -20,20 +22,20 @@ const SalesData = ({ str }) => {
         };
 
         fetchSalesData();
-    }, []);
+    }, [str]);
 
     return (
-        <div>
-            <h2>Sales Data </h2>
+        <div className="sales-data-container">
+            <h2>Sales Data</h2>
 
-            {loading && <p>Loading...</p>}
+            {loading && <p className="loading-message">Loading...</p>}
 
             {error && <p className="error-message">{error}</p>}
 
             {salesData && (
                 <div>
                     {salesData.map((order, index) => (
-                        <div key={index}>
+                        <div key={index} className="order-details">
                             <h3>Order Details:</h3>
                             <p>Name: {order.name}</p>
                             <p>Address: {order.address}</p>
@@ -43,14 +45,14 @@ const SalesData = ({ str }) => {
                             <p>Contact Phone: {order.contact_phone}</p>
 
                             <h4>Products:</h4>
-                            <ul>
+                            <ul className="products-list">
                                 {order.products.map((product, productIndex) => (
                                     <li key={productIndex}>
                                         {product.name} - Quantity: {product.qty}
                                     </li>
                                 ))}
                             </ul>
-                            <p>Total Amount: {order.totalPrice}</p>
+                            <p className="total-amount">Total Amount: {order.totalPrice}</p>
                         </div>
                     ))}
                 </div>

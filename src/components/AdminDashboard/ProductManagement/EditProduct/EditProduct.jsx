@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import './EditProduct.css';
 
 const EditProduct = () => {
     const { productId } = useParams();
@@ -36,8 +37,14 @@ const EditProduct = () => {
     };
 
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        if (name === 'images') {
+        const { name, value, checked } = e.target;
+        if (name === 'isHidden') {
+            setProduct({
+                ...product,
+                [name]: checked,
+            });
+        }
+        else if (name === 'images') {
             const imagesArray = value.split(',');
             setProduct({
                 ...product,
@@ -88,6 +95,9 @@ const EditProduct = () => {
 
                     <label>Images (comma-separated URLs):</label>
                     <input type="text" name="images" value={product.images.join(',')} onChange={handleInputChange} />
+
+                    <label>Hide this product:</label>
+                    <input type="checkbox" name='isHidden' checked={product.isHidden} onChange={handleInputChange} />
 
                     <button type="submit">Save Changes</button>
                 </form>

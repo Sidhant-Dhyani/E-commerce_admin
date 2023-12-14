@@ -1,8 +1,9 @@
-.product_management {
-    border: solid 2px red;
-}
 
 .product_management_container {
     display: flex;
     justify-content: space-evenly;
+}
+
+.product_management_container h5 {
+    
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Dashboard.css';
 import ProductManagement from '../ProductManagement/ProductManagement';
 import DiscountManagement from '../DiscountManagement/DiscountManagement';
@@ -14,7 +14,8 @@ const Dashboard = () => {
 
     return (
         <div className='dashboard'>
-            <div className='dashboard__container_navbar'>
+            <h1 className='dashboard_heading'>Welcome to Admin Dashboard!!</h1>
+            <div className='dashboard_container_navbar'>
                 <div>
                     <h2 onClick={() => handleHeaderClick('ProductManagement')} >Product Management</h2>
                 </div>
@@ -40,10 +41,6 @@ const Dashboard = () => {
             {selectedComponent === 'SalesManagement' && <SalesManagement />}
             {selectedComponent === 'DiscountManagement' && <DiscountManagement />}
             {selectedComponent === 'ProductManagement' && <ProductManagement />}
-
-            <div className='dashboard__container_right'>
-
-            </div>
         </div>
     );
 };

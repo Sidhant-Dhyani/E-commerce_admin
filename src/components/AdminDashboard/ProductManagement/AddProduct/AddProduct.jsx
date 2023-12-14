@@ -49,7 +49,7 @@ const AddProduct = () => {
 
     return (
         <div>
-            <h1>Add a New Product</h1>
+            <h1 className='add_product_heading'>Add a New Product</h1>
 
             <form className="form" onSubmit={handleSubmit}>
                 <label className="label">Title:</label>
@@ -90,4 +90,3 @@ const AddProduct = () => {
 }
 
 export default AddProduct;
-

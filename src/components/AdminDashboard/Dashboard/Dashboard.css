@@ -1,6 +1,9 @@
 
-.dashboard__container_navbar {
+.dashboard_container_navbar {
     display: flex;
     justify-content: space-evenly;
 }
 
+.dashboard_heading {
+    text-align: center;
+}

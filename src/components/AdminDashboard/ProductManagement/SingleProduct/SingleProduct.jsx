@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './SingleProduct.css';
 
 const SingleProduct = () => {
     const { productId } = useParams();
@@ -13,6 +14,7 @@ const SingleProduct = () => {
             try {
                 const response = await axios.get(`http://localhost:4000/api/admin/${productId}`);
                 setProduct(response.data);
+                console.log(response.data);
                 setLoading(false);
             } catch (error) {
                 console.log(error);
@@ -23,7 +25,7 @@ const SingleProduct = () => {
     }, [productId]);
 
     const handleEditClick = () => {
-        navigate(`/editproduct/${productId}`);
+        navigate(`/editProduct/${productId}`);
     };
 
     const handleDeleteClick = async () => {
@@ -65,6 +67,9 @@ const SingleProduct = () => {
                             </li>
                         ))}
                     </ul>
+                    {product.hasOwnProperty('isHidden') && (
+                        <h4>Is Hidden: {product.isHidden ? 'Yes' : 'No'}</h4>
+                    )}
                     <button onClick={handleEditClick}>Edit</button>
                     <button onClick={handleDeleteClick}>Delete</button>
                 </div>

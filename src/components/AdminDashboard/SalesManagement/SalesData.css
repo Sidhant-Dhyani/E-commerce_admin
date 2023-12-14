@@ -1,0 +1,39 @@
+
+.sales-data-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.error-message {
+    color: red;
+}
+
+.order-details {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.order-details h3 {
+    margin-bottom: 8px;
+}
+
+.products-list {
+    list-style: none;
+    padding: 0;
+}
+
+.products-list li {
+    margin-bottom: 8px;
+}
+
+.total-amount {
+    margin-top: 16px;
+    font-weight: bold;
+}
+
+.loading-message {
+    font-style: italic;
+    color: #888;
+}

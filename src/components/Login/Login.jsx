@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { login } from '../../redux/loginSlice';
 
 const Login = () => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: '',
@@ -24,7 +27,8 @@ const Login = () => {
             if (response.status === 200) {
                 const { token } = response.data;
                 localStorage.setItem("admintoken", token);
-                window.location.reload();
+                dispatch(login(token));
+                navigate('/');
                 console.log("Login Successful!!");
             }
         } catch (error) {
