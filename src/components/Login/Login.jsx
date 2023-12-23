@@ -19,7 +19,8 @@ const Login = () => {
             ...formData,
             [name]: value,
         });
-    }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -34,17 +35,33 @@ const Login = () => {
         } catch (error) {
             console.log(error.message);
         }
+    };
 
-    }
     return (
-        <div>
-            <form action="submit" onSubmit={handleSubmit}>
-                <input type="email" name='email' value={formData.email} placeholder='Enter Email' onChange={handleChange} />
-                <input type="password" name='password' value={formData.password} placeholder='Enter Password' onChange={handleChange} />
-                <button>Submit</button>
+        <div className="login-container">
+            <form className="login-form" onSubmit={handleSubmit}>
+                <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    placeholder="Enter Email"
+                    className="input-field"
+                    onChange={handleChange}
+                />
+                <input
+                    type="password"
+                    name="password"
+                    value={formData.password}
+                    placeholder="Enter Password"
+                    className="input-field"
+                    onChange={handleChange}
+                />
+                <button type="submit" className="submit-button">
+                    Login
+                </button>
             </form>
         </div>
-    )
-}
+    );
+};
 
 export default Login;
