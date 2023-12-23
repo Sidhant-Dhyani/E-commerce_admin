@@ -23,7 +23,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:4000/api/adminAuth/login', formData);
+            const response = await axios.post('https://e-commerce-backend-with-admin.vercel.app/api/adminAuth/login', formData);
             if (response.status === 200) {
                 const { token } = response.data;
                 localStorage.setItem("admintoken", token);

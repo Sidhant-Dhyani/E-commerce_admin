@@ -1,7 +1,6 @@
 
 .dashboard_container_navbar {
     display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
 }
 
