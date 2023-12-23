@@ -11,7 +11,7 @@ const EditProduct = () => {
     useEffect(() => {
         const fetchProductData = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/api/admin/${productId}`);
+                const response = await axios.get(`https://e-commerce-backend-with-admin.vercel.app/api/admin/${productId}`);
                 setProduct(response.data);
                 setLoading(false);
             } catch (error) {
@@ -26,7 +26,7 @@ const EditProduct = () => {
         e.preventDefault();
         console.log('Submitting edit:', product);
         axios
-            .patch(`http://localhost:4000/api/admin/editproduct/${productId}`, product)
+            .patch(`https://e-commerce-backend-with-admin.vercel.app/api/admin/editproduct/${productId}`, product)
             .then((response) => {
                 console.log('Edit successful:', response.data);
                 navigate('/');

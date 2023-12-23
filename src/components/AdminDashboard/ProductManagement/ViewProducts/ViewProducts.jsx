@@ -13,7 +13,7 @@ const ViewProduct = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/api/admin');
+                const response = await axios.get('https://e-commerce-backend-with-admin.vercel.app/api/admin');
                 setProducts(response.data);
                 setLoading(false);
             } catch (error) {

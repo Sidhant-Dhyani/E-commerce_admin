@@ -34,7 +34,7 @@ const AddProduct = () => {
         }
     };
 
-    const url = 'http://localhost:4000/api/admin/createnew';
+    const url = 'https://e-commerce-backend-with-admin.vercel.app/api/admin/createnew';
 
     const handleSubmit = async (e) => {
         e.preventDefault();

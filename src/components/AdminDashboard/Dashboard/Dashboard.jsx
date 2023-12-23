@@ -36,11 +36,13 @@ const Dashboard = () => {
                     <h2 onClick={() => handleHeaderClick('Notifications')} >Notifications</h2>
                 </div>
             </div>
-            {selectedComponent === 'Notifications' && <Notifications />}
-            {selectedComponent === 'InventoryManagement' && <InventoryManagement />}
-            {selectedComponent === 'SalesManagement' && <SalesManagement />}
-            {selectedComponent === 'DiscountManagement' && <DiscountManagement />}
-            {selectedComponent === 'ProductManagement' && <ProductManagement />}
+            <div>
+                {selectedComponent === 'Notifications' && <Notifications />}
+                {selectedComponent === 'InventoryManagement' && <InventoryManagement />}
+                {selectedComponent === 'SalesManagement' && <SalesManagement />}
+                {selectedComponent === 'DiscountManagement' && <DiscountManagement />}
+                {selectedComponent === 'ProductManagement' && <ProductManagement />}
+            </div>
         </div>
     );
 };
