@@ -11,7 +11,7 @@ const SalesData = ({ str }) => {
     useEffect(() => {
         const fetchSalesData = async () => {
             try {
-                const response = await axios.get(`https://e-commerce-backend-with-admin.vercel.app/api/sales/${str}`);
+                const response = await axios.get(`https://e-commerce-backend-omega-seven.vercel.app/api/sales/${str}`);
                 setSalesData(response.data);
                 console.log(response.data);
                 setLoading(false);
