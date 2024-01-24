@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import './AddProduct.css';
+import BASE_URL from '../../../../config';
 import axios from 'axios';
 
 const AddProduct = () => {
@@ -34,7 +35,7 @@ const AddProduct = () => {
         }
     };
 
-    const url = 'https://e-commerce-backend-omega-seven.vercel.app/api/admin/createnew';
+    const url = `${BASE_URL}/api/admin/createnew`;
 
     const handleSubmit = async (e) => {
         e.preventDefault();

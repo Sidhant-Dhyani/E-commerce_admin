@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './SalesData.css';
+import BASE_URL from '../../../config';
 
 const SalesData = ({ str }) => {
     const [salesData, setSalesData] = useState([]);
@@ -11,7 +12,7 @@ const SalesData = ({ str }) => {
     useEffect(() => {
         const fetchSalesData = async () => {
             try {
-                const response = await axios.get(`https://e-commerce-backend-omega-seven.vercel.app/api/sales/${str}`);
+                const response = await axios.get(`${BASE_URL}/api/sales/${str}`);
                 setSalesData(response.data);
                 console.log(response.data);
                 setLoading(false);

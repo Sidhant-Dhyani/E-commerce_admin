@@ -1,4 +1,4 @@
-// Add, view=> Products list, every product will have an edit option and delete button.
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProductManagement.css';

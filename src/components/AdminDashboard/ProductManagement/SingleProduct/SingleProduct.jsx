@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './SingleProduct.css';
+import BASE_URL from '../../../../config';
 
 const SingleProduct = () => {
     const { productId } = useParams();
@@ -12,7 +13,7 @@ const SingleProduct = () => {
     useEffect(() => {
         const fetchProductData = async () => {
             try {
-                const response = await axios.get(`https://e-commerce-backend-omega-seven.vercel.app/api/admin/${productId}`);
+                const response = await axios.get(`${BASE_URL}/api/admin/${productId}`);
                 setProduct(response.data);
                 console.log(response.data);
                 setLoading(false);
@@ -30,7 +31,7 @@ const SingleProduct = () => {
 
     const handleDeleteClick = async () => {
         try {
-            await axios.delete(`https://e-commerce-backend-omega-seven.vercel.app/api/admin/deleteproduct/${productId}`);
+            await axios.delete(`${BASE_URL}/api/admin/deleteproduct/${productId}`);
             navigate('/');
         } catch (error) {
             console.log(error);

@@ -25,7 +25,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://e-commerce-backend-omega-seven.vercel.app/api/adminAuth/login', {
+            const response = await axios.post(`${BASE_URL}/api/adminAuth/login`, {
                 email: formData.email,
                 password: formData.password,
             }

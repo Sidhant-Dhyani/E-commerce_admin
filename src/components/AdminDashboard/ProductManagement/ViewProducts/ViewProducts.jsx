@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ViewProducts.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import BASE_URL from '../../../../config';
 
 const ViewProduct = () => {
     const [products, setProducts] = useState([]);
@@ -13,7 +14,7 @@ const ViewProduct = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('https://e-commerce-backend-omega-seven.vercel.app/api/admin');
+                const response = await axios.get(`${BASE_URL}/api/admin`);
                 setProducts(response.data);
                 setLoading(false);
             } catch (error) {

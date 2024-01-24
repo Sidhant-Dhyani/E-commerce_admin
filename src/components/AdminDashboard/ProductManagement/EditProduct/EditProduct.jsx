@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './EditProduct.css';
+import BASE_URL from '../../../../config';
 
 const EditProduct = () => {
     const { productId } = useParams();
@@ -11,7 +12,7 @@ const EditProduct = () => {
     useEffect(() => {
         const fetchProductData = async () => {
             try {
-                const response = await axios.get(`https://e-commerce-backend-omega-seven.vercel.app/api/admin/${productId}`);
+                const response = await axios.get(`${BASE_URL}/api/admin/${productId}`);
                 setProduct(response.data);
                 setLoading(false);
             } catch (error) {
@@ -26,7 +27,7 @@ const EditProduct = () => {
         e.preventDefault();
         console.log('Submitting edit:', product);
         axios
-            .patch(`https://e-commerce-backend-omega-seven.vercel.app/api/admin/editproduct/${productId}`, product)
+            .patch(`${BASE_URL}/api/admin/editproduct/${productId}`, product)
             .then((response) => {
                 console.log('Edit successful:', response.data);
                 navigate('/');
