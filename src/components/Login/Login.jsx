@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import axios from 'axios';
+import BASE_URL from '../../config';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/loginSlice';
 
